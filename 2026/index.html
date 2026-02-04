@@ -23,6 +23,50 @@
       text-align: center;
     }
 
+    button {
+      padding: 12px 28px;
+      font-size: 17px;
+      font-weight: bold;
+      color: white;
+      background-color: #ff2e64;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(255, 46, 100, 0.7);
+      position: relative;
+      overflow: hidden;
+    }
+
+    button::after {
+      content: '💖';
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      font-size: 20px;
+      animation: floatHeart 1.5s infinite;
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+
+      50% {
+        transform: translateY(-10px) rotate(20deg);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: translateY(0) rotate(-10deg);
+        opacity: 1;
+      }
+    }
+
+    button:hover {
+      box-shadow: 0 0 20px rgba(255, 46, 100, 1);
+    }
+
     #cake {
       width: 200px;
       height: 200px;
@@ -113,7 +157,10 @@
 </head>
 
 <body>
-  <div id="container">
+  <div id="startPage">
+    <button id="startBtn">查看惊喜 💌</button>
+  </div>
+  <div id="container" style="display:none;">
     <svg id="cake" viewBox="0 0 200 200">
       <rect id="layer1" x="40" y="120" width="120" height="20" fill="#F5A9BC" />
       <rect id="layer2" x="45" y="100" width="110" height="20" fill="#F781AC" />
@@ -150,8 +197,8 @@
     const bgm2 = document.getElementById('bgm2');
     const bgm3 = document.getElementById('bgm3');
 
-    // 第一步：播放第一页音乐
-    bgm1.play();
+    const startBtn = document.getElementById('startBtn');
+    const container = document.getElementById('container');
 
     // 蛋糕层逐步显示
     let layerIndex = 0;
@@ -161,7 +208,17 @@
       layerIndex++;
       setTimeout(showNextLayer, 500);
     }
-    showNextLayer();
+
+    startBtn.onclick = () => {
+      document.getElementById('startPage').style.display = 'none';
+      container.style.display = 'block';
+
+      // 第一步：播放第一页音乐
+      bgm1.play();
+
+      // 蛋糕层逐步显示
+      showNextLayer();
+    };
 
     function showMessage() {
       message.style.display = 'block';
@@ -194,7 +251,6 @@
       bgm3.play();
       lightCandles();
     }
-
 
     function lightCandles() {
       candles.forEach((c, i) => {
@@ -256,7 +312,7 @@
         heart.style.left = Math.random() * window.innerWidth + 'px';
         heart.textContent = '❤️';
         document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 3000);
+        setTimeout(() => heart.remove(), 5000);
         idx++;
         setTimeout(showLine, 1000);
       }
