@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>赵老师生日惊喜</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Microsoft Yahei', sans-serif;
+      background: #fce4ec;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #container {
+      text-align: center;
+    }
+
+    #cake {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+    }
+
+    .flame {
+      opacity: 0;
+      transform-origin: center bottom;
+      animation: flicker 5s infinite alternate;
+      visibility: hidden;
+    }
+
+    @keyframes flicker {
+      0% {
+        transform: scale(1, 1);
+        opacity: 0.8;
+        fill: orange;
+      }
+
+      50% {
+        transform: scale(1.04, 1.04);
+        opacity: 1;
+        fill: yellow;
+      }
+
+      100% {
+        transform: scale(1, 1);
+        opacity: 0.8;
+        fill: orange;
+      }
+    }
+
+    #message,
+    #buttons,
+    #blessing {
+      display: none;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .heart {
+      position: absolute;
+      color: red;
+      font-size: 20px;
+      animation: floatUp 2s linear forwards;
+    }
+
+    @keyframes floatUp {
+      0% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(-100px);
+      }
+    }
+
+    #fireworks {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    svg rect {
+      transition: opacity 0.5s ease;
+      opacity: 0;
+    }
+
+    .candle {
+      fill: yellow;
+      opacity: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <svg id="cake" viewBox="0 0 200 200">
+      <rect id="layer1" x="40" y="120" width="120" height="20" fill="#F5A9BC" />
+      <rect id="layer2" x="45" y="100" width="110" height="20" fill="#F781AC" />
+      <rect id="layer3" x="50" y="80" width="100" height="20" fill="#FA5882" />
+      <rect id="layer4" x="60" y="60" width="80" height="20" fill="#FE2E64" />
+      <rect id="layer5" x="70" y="40" width="60" height="20" fill="#FA5858" />
+      <!-- 蜡烛 -->
+      <rect class="candle" x="90" y="30" width="5" height="10" />
+      <rect class="candle" x="105" y="30" width="5" height="10" />
+      <circle class="flame" cx="92.5" cy="25" r="3" fill="orange" />
+      <circle class="flame" cx="107.5" cy="25" r="3" fill="orange" />
+
+    </svg>
+    <div id="message">恭喜赵先生又老一岁，小女子在这里送上一份惊喜，请问你喜欢么？</div>
+    <div id="buttons">
+      <button id="dislike">不喜欢 🙁</button>
+      <button id="like">喜欢 ❤️</button>
+    </div>
+    <div id="blessing"></div>
+  </div>
+  <audio id="bgm1" src="music1.mp3" loop></audio>
+  <audio id="bgm2" src="music2.mp3"></audio>
+  <audio id="bgm3" src="music3.mp3" loop></audio>
+  <canvas id="fireworks"></canvas>
+  <script>
+    const layers = ['layer1', 'layer2', 'layer3', 'layer4', 'layer5'];
+    const candles = document.querySelectorAll('.candle');
+    const message = document.getElementById('message');
+    const buttons = document.getElementById('buttons');
+    const dislike = document.getElementById('dislike');
+    const like = document.getElementById('like');
+    const blessing = document.getElementById('blessing');
+    const bgm1 = document.getElementById('bgm1');
+    const bgm2 = document.getElementById('bgm2');
+    const bgm3 = document.getElementById('bgm3');
+
+    // 第一步：播放第一页音乐
+    bgm1.play();
+
+    // 蛋糕层逐步显示
+    let layerIndex = 0;
+    function showNextLayer() {
+      if (layerIndex >= layers.length) { showMessage(); return; }
+      document.getElementById(layers[layerIndex]).style.opacity = 1;
+      layerIndex++;
+      setTimeout(showNextLayer, 500);
+    }
+    showNextLayer();
+
+    function showMessage() {
+      message.style.display = 'block';
+      setTimeout(() => { buttons.style.display = 'block'; }, 1000);
+    }
+
+    dislike.onclick = () => {
+      bgm1.pause();
+
+      // 每次播放前重置到开头
+      bgm2.currentTime = 1.3;
+      bgm2.play();
+
+      message.textContent = '呜……那我再想想办法 😭';
+      buttons.style.display = 'none';
+
+      setTimeout(() => {
+        message.textContent = '恭喜赵先生又老一岁，小女子在这里送上一份惊喜，请问你喜欢么？';
+        buttons.style.display = 'block';
+
+        bgm2.pause();
+        bgm1.play();
+      }, 4500);
+    }
+
+    like.onclick = () => {
+      buttons.style.display = 'none';
+      message.style.display = 'none';
+      bgm1.pause();
+      bgm3.play();
+      lightCandles();
+    }
+
+
+    function lightCandles() {
+      candles.forEach((c, i) => {
+        setTimeout(() => {
+          candles[i].style.opacity = 1;
+
+          const flame = document.querySelectorAll('.flame')[i];
+          flame.style.visibility = 'visible';
+        }, i * 500);
+      });
+
+      setTimeout(() => { startFireworks(); showBlessing(); }, 1000 + candles.length * 500);
+    }
+
+    function startFireworks() {
+      const canvas = document.getElementById('fireworks');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < 20; i++) {
+          const x = Math.random() * canvas.width;
+          const y = Math.random() * canvas.height;
+          ctx.beginPath();
+          ctx.arc(x, y, Math.random() * 5 + 2, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(255,182,193,0.7)';
+          ctx.fill();
+        }
+        requestAnimationFrame(draw);
+      }
+      draw();
+    }
+
+    function showBlessing() {
+      blessing.style.display = 'block';
+      const lines = [
+        '赵愿你新的一岁，所行皆坦途 ❤️',
+        '老天把好运与温柔，都悄悄留给你 ❤️❤️',
+        '师心从容，忙有方向，闲有欢喜 ❤️❤️❤️',
+        '生活明亮，日子不慌 ❤️',
+        '日常平安，万事顺遂 ❤️❤️',
+        '快乐不缺席，每天都值得期待 ❤️❤️❤️',
+        '乐在当下，也奔向更远的未来 ❤️❤️❤️❤️',
+        '我把最真诚的祝福放在这里 ❤️❤️❤️❤️',
+        '爱意不吵不闹，却一直在 ❤️❤️❤️❤️❤️',
+        '你，岁岁年年，皆被偏爱 ❤️❤️❤️❤️❤️❤️',
+        '生日快乐，赵老师。 🎂🎂🎂🎂🎂🎂',
+        '—— 你家小猪'
+      ];
+      let idx = 0;
+      function showLine() {
+        if (idx >= lines.length) return;
+        const p = document.createElement('p');
+        p.textContent = lines[idx];
+        blessing.appendChild(p);
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.left = Math.random() * window.innerWidth + 'px';
+        heart.textContent = '❤️';
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 3000);
+        idx++;
+        setTimeout(showLine, 1000);
+      }
+      showLine();
+    }
+  </script>
+</body>
+
+</html>
