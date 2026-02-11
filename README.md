@@ -37,8 +37,7 @@
   <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
   <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
-  <a href="#link-pages">Pages</a>
+  <a href="#checkered_flag-starting">Starting</a>
 </p>
 
 ---
@@ -108,16 +107,6 @@ $ start index.html   # Windows
 
 Each year lives in its own folder with an independent index.html.
 Simply open the file in a browser to enjoy the birthday surprise :birthday::sparkles:
-
----
-
-## :link: Pages ##
-
-Here are the available birthday pages by year:
-
- * 2026 → https://emilie-zhu.github.io/Birthday-Page/2026
-
-More years will be added as the story continues :heart:
 
 Made with :heart: by Emilie Zhu.
 
