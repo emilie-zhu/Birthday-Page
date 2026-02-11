@@ -1,9 +1,9 @@
 <div align="center" id="top">
-  <a href="https://emilie-zhu.github.io/Birthday-Page">See it live 🎉</a>
+  <a href="https://emilie-zhu.github.io/Birthday-Page">See it live :tada:</a>
 </div>
 
 <div align="center">
-  <h1>🎂 Birthday Page 🎉</h1>
+  <h1>:birthday: Birthday Page :gift:</h1>
 </div>
 
 <p align="center">
@@ -45,25 +45,25 @@
 
 ## :dart: About ##
 
-This is a **personal Birthday Page project** I created for my honey ❤️.  
+This is a **personal Birthday Page project** I created for my honey :sparkling_heart:.  
 The project is structured so that **each year has its own folder**, containing an independent HTML page with music, animations, and interactive features.
 
 **Goals:**  
-- Create a fun, emotional, and interactive birthday surprise 🎉  
-- Each year has its **own unique cake animation, buttons, and background music** 🎂🎵  
-- Keep everything simple and self-contained using only HTML, CSS, and JavaScript 💻📱  
+- Create a fun, emotional, and interactive birthday surprise :tada:   
+- Each year has its **own unique animation**  
+- Keep everything simple and self-contained using only HTML, CSS, and JavaScript  
 
 ---
 
 ## :sparkles: Features ##
 
-- Animated SVG cake that **builds layer by layer** 🏗️  
-- Interactive buttons: “Like ❤️” / “Dislike 😢”  
-- Candle flame animations 🔥  
-- Fireworks effects 🎆  
-- Floating hearts animation ❤️  
-- Personalized birthday messages with emojis 💌  
-- Background music for each page 🎵  
+- Animated SVG cake that **builds layer by layer** :construction:  
+- Interactive buttons: “Like :heart:” / “Dislike :sob:”  
+- Candle flame animations :fire:  
+- Fireworks effects :fireworks:  
+- Floating hearts animation :heart:  
+- Personalized birthday messages with emojis :heart_decoration:  
+- Background music for each page :notes:  
 
 ---
 
@@ -85,10 +85,10 @@ The project is structured so that **each year has its own folder**, containing a
 ## :white_check_mark: Requirements ##
 
 - Any modern web browser (Chrome, Safari, Edge, Firefox, or WeChat browser)  
-- Optional: Internet connection if accessed via GitHub Pages 🌐  
-- No Node.js, no dependencies, no installation required 🚫  
+- Optional: Internet connection if accessed via GitHub Pages :globe_with_meridians:  
+- No Node.js, no dependencies, no installation required :no_entry_sign:  
 
-> ⚠️ Note: Most mobile browsers require a **user interaction (tap/click)** to start audio playback 🎵
+> :warning: Note: Most mobile browsers require a **user interaction (tap/click)** to start audio playback :musical_note:
 
 ---
 
@@ -107,7 +107,7 @@ $ start index.html   # Windows
 ```
 
 Each year lives in its own folder with an independent index.html.
-Simply open the file in a browser to enjoy the birthday surprise 🎂🎉
+Simply open the file in a browser to enjoy the birthday surprise :birthday::sparkles:
 
 ---
 
@@ -115,9 +115,9 @@ Simply open the file in a browser to enjoy the birthday surprise 🎂🎉
 
 Here are the available birthday pages by year:
 
-🎈 2026 → https://emilie-zhu.github.io/Birthday-Page/2026
+ * 2026 → https://emilie-zhu.github.io/Birthday-Page/2026
 
-More years will be added as the story continues ❤️
+More years will be added as the story continues :heart:
 
 Made with :heart: by Emilie Zhu.
 
