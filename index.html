@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎂 Birthday Page</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+    }
+
+    .container {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      max-width: 420px;
+      width: 90%;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2.2rem;
+    }
+
+    p {
+      font-size: 1.05rem;
+      margin-bottom: 30px;
+    }
+
+    .years {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .year-btn {
+      text-decoration: none;
+      padding: 14px;
+      border-radius: 12px;
+      background: #ff6f91;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .year-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255, 111, 145, 0.5);
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>🎂 Birthday Page 🎉</h1>
+    <p>
+      Welcome to a collection of birthday surprises made with love ❤️  
+      <br />
+      Choose a year to discover the celebration 🎆
+    </p>
+
+    <div class="years">
+      <a class="year-btn" href="./2026/">2026</a>
+      <!-- Future years -->
+      <!-- <a class="year-btn" href="./2027/">🎂 Birthday 2027</a> -->
+    </div>
+
+    <footer>
+      Made with ❤️ by Emilie Zhu
+    </footer>
+  </div>
+</body>
+</html>
