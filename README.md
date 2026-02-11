@@ -1,30 +1,34 @@
+<div align="center" id="top">
+  <a href="https://emilie-zhu.github.io/Birthday-Page">See it live 🎉</a>
+</div>
+
 <div align="center">
   <h1>🎂 Birthday Page 🎉</h1>
 </div>
 
 <p align="center">
   <a href="https://github.com/emilie-zhu/Birthday-Page/fork" target="_blank">
-    <img src="https://img.shields.io/github/forks/emilie-zhu/Birthday-Page?" alt="Badge showing the total of project forks"/>
+    <img src="https://img.shields.io/github/forks/emilie-zhu/Birthday-Page?" alt="GitHub forks"/>
   </a>
 
   <a href="https://github.com/emilie-zhu/Birthday-Page/stargazers" target="_blank">
-    <img src="https://img.shields.io/github/stars/emilie-zhu/Birthday-Page?" alt="Badge showing the total of project stars"/>
+    <img src="https://img.shields.io/github/stars/emilie-zhu/Birthday-Page?" alt="GitHub stars"/>
   </a>
 
   <a href="https://github.com/emilie-zhu/Birthday-Page/commits/main" target="_blank">
-    <img src="https://img.shields.io/github/commit-activity/m/emilie-zhu/Birthday-Page?" alt="Badge showing average commit frequency per month"/>
+    <img src="https://img.shields.io/github/commit-activity/m/emilie-zhu/Birthday-Page?" alt="Commit activity"/>
   </a>
 
   <a href="https://github.com/emilie-zhu/Birthday-Page/issues" target="_blank">
-    <img src="https://img.shields.io/github/issues/emilie-zhu/Birthday-Page?" alt="Badge showing the total of project issues"/>
+    <img src="https://img.shields.io/github/issues/emilie-zhu/Birthday-Page?" alt="Issues"/>
   </a>
 
   <a href="https://github.com/emilie-zhu/Birthday-Page/pulls" target="_blank">
-    <img src="https://img.shields.io/github/issues-pr/emilie-zhu/Birthday-Page?" alt="Badge showing the total of project pull-requests"/>
+    <img src="https://img.shields.io/github/issues-pr/emilie-zhu/Birthday-Page?" alt="Pull requests"/>
   </a>
 
   <a href="https://github.com/emilie-zhu/Birthday-Page/LICENSE.md" target="_blank">
-    <img alt="Badge showing project license type" src="https://img.shields.io/github/license/emilie-zhu/Birthday-Page?color=f85149">
+    <img src="https://img.shields.io/github/license/emilie-zhu/Birthday-Page?color=f85149" alt="License"/>
   </a>
 </p>
 
@@ -33,32 +37,33 @@
   <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
   <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-starting">Starting</a>
+  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
+  <a href="#link-pages">Pages</a>
 </p>
 
 ---
 
 ## :dart: About ##
 
-This is a **personal Birthday Page project** I made for my honey ❤️.  
-The project is organized so that **each year has its own folder**, containing an HTML page with music, animations, and interactive features for that year’s birthday.
+This is a **personal Birthday Page project** I created for my honey ❤️.  
+The project is structured so that **each year has its own folder**, containing an independent HTML page with music, animations, and interactive features.
 
 **Goals:**  
-- Create a fun and loving interactive birthday surprise 🎉  
-- Each year’s page has its own **unique cake animation, buttons, and music** 🎂🎵  
-- Simple, self-contained HTML/JS/CSS pages that work on desktop and mobile 💻📱  
+- Create a fun, emotional, and interactive birthday surprise 🎉  
+- Each year has its **own unique cake animation, buttons, and background music** 🎂🎵  
+- Keep everything simple and self-contained using only HTML, CSS, and JavaScript 💻📱  
 
 ---
 
 ## :sparkles: Features ##
 
 - Animated SVG cake that **builds layer by layer** 🏗️  
-- Interactive buttons: “like ❤️” / “dislike 😢”  
-- Candle flames animation 🔥  
-- Fireworks effect 🎆  
+- Interactive buttons: “Like ❤️” / “Dislike 😢”  
+- Candle flame animations 🔥  
+- Fireworks effects 🎆  
 - Floating hearts animation ❤️  
-- Personalized birthday wishes with emojis 💌  
-- Music playback for each page 🎵  
+- Personalized birthday messages with emojis 💌  
+- Background music for each page 🎵  
 
 ---
 
@@ -72,36 +77,47 @@ The project is organized so that **each year has its own folder**, containing an
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" height="60" alt="JavaScript" />
 </div>
 
-> Pure **HTML / CSS / JS** project. No frameworks needed. Works on any modern browser.
+> Pure **HTML / CSS / JavaScript** project.  
+> No frameworks, no build tools, works on any modern browser.
 
 ---
 
 ## :white_check_mark: Requirements ##
 
 - Any modern web browser (Chrome, Safari, Edge, Firefox, or WeChat browser)  
-- Optional: Internet access to load GitHub Pages if hosted online 🌐  
-- No installation of Node.js or frameworks is required 🚫  
+- Optional: Internet connection if accessed via GitHub Pages 🌐  
+- No Node.js, no dependencies, no installation required 🚫  
 
-> Note: Mobile browsers may require **a tap/click** to start audio due to autoplay restrictions 🎵
+> ⚠️ Note: Most mobile browsers require a **user interaction (tap/click)** to start audio playback 🎵
 
 ---
 
 ## :checkered_flag: Starting ##
 
 ```bash
-# Clone this project
+# Clone this repository
 $ git clone https://github.com/emilie-zhu/Birthday-Page.git
 
-# Access the year folder (example: 2026)
+# Go to a specific year folder (example: 2026)
 $ cd Birthday-Page/2026
 
 # Open index.html in your browser
-$ open index.html    # MacOS
+$ open index.html    # macOS
 $ start index.html   # Windows
 ```
 
-Each year has its own folder with a separate index.html.
-Just open it in a browser to see the interactive birthday page 🎂🎉
+Each year lives in its own folder with an independent index.html.
+Simply open the file in a browser to enjoy the birthday surprise 🎂🎉
+
+---
+
+## :link: Pages ##
+
+Here are the available birthday pages by year:
+
+🎈 2026 → https://emilie-zhu.github.io/Birthday-Page/2026
+
+More years will be added as the story continues ❤️
 
 Made with :heart: by Emilie Zhu.
 
