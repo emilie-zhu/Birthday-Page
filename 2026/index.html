@@ -6,21 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>赵老师生日惊喜</title>
   <style>
+    html,
     body {
       margin: 0;
       padding: 0;
+      height: 100%;
+    }
+
+    body {
       font-family: 'Microsoft Yahei', sans-serif;
       background: #fce4ec;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
       overflow: hidden;
-      position: relative;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     #container {
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     button {
@@ -35,6 +44,7 @@
       box-shadow: 0 0 10px rgba(255, 46, 100, 0.7);
       position: relative;
       overflow: hidden;
+      margin-top: 10px;
     }
 
     button::after {
@@ -63,57 +73,21 @@
       }
     }
 
-    button:hover {
-      box-shadow: 0 0 20px rgba(255, 46, 100, 1);
-    }
-
     #cake {
-      width: 200px;
-      height: 200px;
-      margin: 0 auto;
-    }
-
-    .flame {
-      opacity: 0;
-      transform-origin: center bottom;
-      animation: flicker 5s infinite alternate;
-      visibility: hidden;
-    }
-
-    @keyframes flicker {
-      0% {
-        transform: scale(1, 1);
-        opacity: 0.8;
-        fill: orange;
-      }
-
-      50% {
-        transform: scale(1.04, 1.04);
-        opacity: 1;
-        fill: yellow;
-      }
-
-      100% {
-        transform: scale(1, 1);
-        opacity: 0.8;
-        fill: orange;
-      }
+      width: 220px;
+      height: 250px;
+      margin: 0;
     }
 
     #message,
     #buttons,
     #blessing {
       display: none;
-      margin-top: 20px;
+      margin-top: 5px;
     }
 
-    button {
-      padding: 10px 20px;
-      margin: 10px;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+    button:hover {
+      box-shadow: 0 0 20px rgba(255, 46, 100, 1);
     }
 
     .heart {
@@ -135,6 +109,54 @@
       }
     }
 
+    .layer,
+    .cream,
+    .candle,
+    .flame {
+      opacity: 0;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .cream {
+      transform: scaleY(0.3);
+    }
+
+    .show {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+
+    .candle {
+      fill: yellow;
+    }
+
+    .flame {
+      opacity: 0;
+      transform-origin: center bottom;
+      animation: flicker 1s infinite alternate;
+      visibility: hidden;
+    }
+
+    @keyframes flicker {
+      0% {
+        transform: scale(1, 1);
+        opacity: 0.8;
+        fill: orange;
+      }
+
+      50% {
+        transform: scale(1.1, 1.12);
+        opacity: 1;
+        fill: yellow;
+      }
+
+      100% {
+        transform: scale(1.04, 1.02);
+        opacity: 0.9;
+        fill: orange;
+      }
+    }
+
     #fireworks {
       position: absolute;
       top: 0;
@@ -142,16 +164,7 @@
       width: 100%;
       height: 100%;
       pointer-events: none;
-    }
-
-    svg rect {
-      transition: opacity 0.5s ease;
-      opacity: 0;
-    }
-
-    .candle {
-      fill: yellow;
-      opacity: 0;
+      z-index: -1;
     }
   </style>
 </head>
@@ -160,20 +173,49 @@
   <div id="startPage">
     <button id="startBtn">查看惊喜 💌</button>
   </div>
-  <div id="container" style="display:none;">
-    <svg id="cake" viewBox="0 0 200 200">
-      <rect id="layer1" x="40" y="120" width="120" height="20" fill="#F5A9BC" />
-      <rect id="layer2" x="45" y="100" width="110" height="20" fill="#F781AC" />
-      <rect id="layer3" x="50" y="80" width="100" height="20" fill="#FA5882" />
-      <rect id="layer4" x="60" y="60" width="80" height="20" fill="#FE2E64" />
-      <rect id="layer5" x="70" y="40" width="60" height="20" fill="#FA5858" />
-      <!-- 蜡烛 -->
-      <rect class="candle" x="90" y="30" width="5" height="10" />
-      <rect class="candle" x="105" y="30" width="5" height="10" />
-      <circle class="flame" cx="92.5" cy="25" r="3" fill="orange" />
-      <circle class="flame" cx="107.5" cy="25" r="3" fill="orange" />
 
+  <div id="container" style="display:none;">
+    <svg id="cake" viewBox="0 0 220 250">
+      <!-- 第1层蛋糕 -->
+      <rect class="layer" x="40" y="185" width="140" height="35" fill="#F8A5C2" rx="5" ry="5" />
+      <path class="cream" d="M40 185 C50 175, 70 195, 80 185 S100 195, 100 185 S120 195, 160 185 L180 190 L40 190 Z"
+        fill="#FFF5F8" />
+      <circle class="cream" cx="60" cy="183" r="3" fill="#ff69b4" />
+      <circle class="cream" cx="160" cy="183" r="3" fill="#ff69b4" />
+
+      <!-- 第2层蛋糕 -->
+      <rect class="layer" x="50" y="150" width="120" height="35" fill="#F78FB3" rx="5" ry="5" />
+      <path class="cream" d="M50 150 C60 140, 80 160, 90 150 S110 160, 150 150 L170 155 L50 155 Z" fill="#FFF0F5" />
+      <circle class="cream" cx="70" cy="147" r="3" fill="#ff69b4" />
+      <circle class="cream" cx="150" cy="147" r="3" fill="#ff69b4" />
+
+      <!-- 第3层蛋糕 -->
+      <rect class="layer" x="60" y="115" width="100" height="35" fill="#FA5882" rx="5" ry="5" />
+      <path class="cream" d="M60 115 C70 105, 90 125, 100 115 S120 125, 160 115 L160 120 L60 120 Z" fill="#FFF5FA" />
+      <circle class="cream" cx="80" cy="113" r="2.5" fill="#ff69b4" />
+      <circle class="cream" cx="140" cy="113" r="2.5" fill="#ff69b4" />
+
+      <!-- 第4层蛋糕 -->
+      <rect class="layer" x="70" y="80" width="80" height="35" fill="#FE2E64" rx="5" ry="5" />
+      <path class="cream" d="M70 80 C80 70, 100 90, 110 80 S130 90, 150 80 L150 85 L70 85 Z" fill="#FFF0F5" />
+      <circle class="cream" cx="85" cy="77" r="2" fill="#ff69b4" />
+      <circle class="cream" cx="135" cy="77" r="2" fill="#ff69b4" />
+
+      <!-- 第5层蛋糕 -->
+      <rect class="layer" x="85" y="50" width="50" height="30" fill="#FA5858" rx="5" ry="5" />
+      <path class="cream" d="M85 50 C90 40, 100 55, 105 50 S115 55, 135 50 L135 55 L85 55 Z" fill="#FFF5F8" />
+      <circle class="cream" cx="95" cy="48" r="2" fill="#ff69b4" />
+      <circle class="cream" cx="120" cy="48" r="2" fill="#ff69b4" />
+
+      <!-- 3个蜡烛，宽度稍微缩小，边角圆润 -->
+      <rect class="candle" x="96" y="35" width="3" height="18" rx="1" ry="1" fill="#FFD700" />
+      <rect class="candle" x="108" y="38" width="3" height="14" rx="1" ry="1" fill="#FFD700" />
+      <rect class="candle" x="120" y="36" width="3" height="16" rx="1" ry="1" fill="#FFD700" />
+      <path class="flame" d="M95 35 C95 42, 100 42, 100 35 Q97.5 27, 95 35 Z" fill="orange" />
+      <path class="flame" d="M107 38 C107 44, 112 44, 112 38 Q109.5 28, 107 38 Z" fill="orange" />
+      <path class="flame" d="M119 36 C119 43, 124 43, 124 36 Q121.5 29, 119 36 Z" fill="orange" />
     </svg>
+
     <div id="message">恭喜赵先生又老一岁，小女子在这里送上一份惊喜，请问你喜欢么？</div>
     <div id="buttons">
       <button id="dislike">不喜欢 🙁</button>
@@ -181,13 +223,16 @@
     </div>
     <div id="blessing"></div>
   </div>
+
   <audio id="bgm1" src="music1.mp3" loop></audio>
   <audio id="bgm2" src="music2.mp3"></audio>
   <audio id="bgm3" src="music3.mp3" loop></audio>
   <canvas id="fireworks"></canvas>
+
   <script>
-    const layers = ['layer1', 'layer2', 'layer3', 'layer4', 'layer5'];
+    const cakeElements = Array.from(document.querySelectorAll('.layer, .cream'));
     const candles = document.querySelectorAll('.candle');
+    const flames = document.querySelectorAll('.flame');
     const message = document.getElementById('message');
     const buttons = document.getElementById('buttons');
     const dislike = document.getElementById('dislike');
@@ -196,29 +241,27 @@
     const bgm1 = document.getElementById('bgm1');
     const bgm2 = document.getElementById('bgm2');
     const bgm3 = document.getElementById('bgm3');
-
     const startBtn = document.getElementById('startBtn');
     const container = document.getElementById('container');
 
-    // 蛋糕层逐步显示
-    let layerIndex = 0;
-    function showNextLayer() {
-      if (layerIndex >= layers.length) { showMessage(); return; }
-      document.getElementById(layers[layerIndex]).style.opacity = 1;
-      layerIndex++;
-      setTimeout(showNextLayer, 500);
+    let cakeIndex = 0;
+
+    function showNextCakeElement() {
+      if (cakeIndex >= cakeElements.length) {
+        showMessage();
+        return;
+      }
+      cakeElements[cakeIndex].classList.add('show');
+      cakeIndex++;
+      setTimeout(showNextCakeElement, 250);
     }
 
     startBtn.onclick = () => {
       document.getElementById('startPage').style.display = 'none';
-      container.style.display = 'block';
-
-      // 第一步：播放第一页音乐
+      container.style.display = 'flex';
       bgm1.play();
-
-      // 蛋糕层逐步显示
-      showNextLayer();
-    };
+      showNextCakeElement();
+    }
 
     function showMessage() {
       message.style.display = 'block';
@@ -227,18 +270,13 @@
 
     dislike.onclick = () => {
       bgm1.pause();
-
-      // 每次播放前重置到开头
       bgm2.currentTime = 1.3;
       bgm2.play();
-
       message.textContent = '呜……那我再想想办法 😭';
       buttons.style.display = 'none';
-
       setTimeout(() => {
         message.textContent = '恭喜赵先生又老一岁，小女子在这里送上一份惊喜，请问你喜欢么？';
         buttons.style.display = 'block';
-
         bgm2.pause();
         bgm1.play();
       }, 4500);
@@ -249,20 +287,16 @@
       message.style.display = 'none';
       bgm1.pause();
       bgm3.play();
-      lightCandles();
-    }
 
-    function lightCandles() {
       candles.forEach((c, i) => {
         setTimeout(() => {
-          candles[i].style.opacity = 1;
-
-          const flame = document.querySelectorAll('.flame')[i];
-          flame.style.visibility = 'visible';
-        }, i * 500);
+          c.style.opacity = 1;
+          flames[i].style.visibility = 'visible';
+          flames[i].style.animationDelay = (Math.random() * 0.5) + 's';
+        }, i * 300);
       });
 
-      setTimeout(() => { startFireworks(); showBlessing(); }, 1000 + candles.length * 500);
+      setTimeout(() => { startFireworks(); showBlessing(); }, 800 + candles.length * 400);
     }
 
     function startFireworks() {
