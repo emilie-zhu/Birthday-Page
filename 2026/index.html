@@ -15,7 +15,7 @@
 
     body {
       font-family: 'Microsoft Yahei', sans-serif;
-      font-size: 12px;
+      font-size: 14px;
       background: #fce4ec;
       display: flex;
       justify-content: center;
@@ -273,7 +273,7 @@
       bgm1.pause();
       bgm2.currentTime = 1.3;
       bgm2.play();
-      message.textContent = '呜……那我再想想办法 😭';
+      message.textContent = '呜……再给你一次机会 😭';
       buttons.style.display = 'none';
       setTimeout(() => {
         message.textContent = '恭喜赵先生又老一岁，小女子在这里送上一份惊喜，请问你喜欢么？';
@@ -323,7 +323,7 @@
     function showBlessing() {
       blessing.style.display = 'block';
       const lines = [
-        '赵老师，在这祝你：❤️',
+        '赵先生，在这祝你：❤️',
         '抗老，抗皱，抗烦恼，❤️❤️',
         '心想事成，事事如意，❤️❤️❤️',
         '步步高升，勇往直前，❤️❤️❤️❤️',
@@ -332,9 +332,8 @@
         '除夕快乐，春节快乐。❤️❤️❤️❤️❤️❤️❤️',
         '我，愿你，新的一年， ❤️',
         '爱干嘛干嘛， ❤️❤️',
-        '你许个愿吧，我帮你实现❤️❤️❤️',
-        '生日快乐，赵老师。 🎂🎂🎂🎂🎂🎂',
-        '—— 你家小猪'
+        '—— 你家小猪',
+        '（赵老师，生日快乐 🎂🎂🎂🎂🎂🎂）'
       ];
       let idx = 0;
       function showLine() {
